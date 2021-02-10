@@ -1,0 +1,23 @@
+extends ./layouts/common
+
+block content
+    div.d-flex.align-items-center.mt-5
+        a.btn.btn-primary(href="users/create") Add New
+        form.ml-auto(action="users/search", method="GET" class="d-flex")
+            input(id="searchItem" type="input" name="q" class="form-control")
+            button(class="btn btn-primary ml-2") Search
+            
+    table.table.mt-5
+        tr
+            th Avatar
+            th Name
+            th Class 
+            th Actions
+        each item in users
+            tr(id=`item-${item.id}`)
+                td
+                    img(src=item.avatar, width='32') 
+                td= item.name 
+                td= item.class
+                td
+                    a(href="/users/"+item.id) View

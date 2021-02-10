@@ -1,0 +1,26 @@
+html 
+    head
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    body
+        div.container
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                a.navbar-brand(href='#') NodeJS Learning
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarNavDropdown.collapse.navbar-collapse
+                    ul.navbar-nav
+                        li.nav-item.active
+                            a.nav-link(href='/') Home
+                        li.nav-item.active
+                            a.nav-link(href='/products') Products
+                        li.nav-item.active
+                            a.nav-link(href='/users') Users
+                        li.nav-item.active
+                            a.nav-link(href='/cart') Cart
+                        li.nav-item
+                            a.nav-link(href='/auth/login') Login
+                        
+                
+                if user
+                    p= user.name 
+            block content

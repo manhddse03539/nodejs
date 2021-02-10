@@ -1,0 +1,24 @@
+extends ./layouts/common
+
+block content
+    h3.mt-5 Products
+    div.container.mt-5
+        div.row.d-flex
+            each item in products
+                div.col-3.mb-5
+                    img(src=`${item.image}`)
+                    h5(style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%")= item.name
+                    p(style="max-width: 80%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;  max-height: 60px")= item.description
+                    a.btn.btn-primary(href="/cart/add/" + item.id) Add to cart
+        div.pagination.d-flex(style="justify-content: center")
+            ul.pagination
+                li.page-item
+                    a.page-link(href=`?page=${prevPage}`) Previous
+                li.page-item
+                    a.page-link(href=`?page=1`) 1
+                li.page-item
+                    a.page-link(href=`?page=2`) 2
+                li.page-item
+                    a.page-link(href=`?page=3`) 3
+                li.page-item
+                    a.page-link(href=`?page=${nextPage}`) Next
